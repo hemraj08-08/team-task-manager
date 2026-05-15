@@ -3,7 +3,7 @@
 A full-stack web application where teams can create projects, assign tasks, manage members, and track progress with role-based access control.
 
 ### 🌐 Live Links & Repository
-- **Live Application (Frontend):** [https://team-task-manager-liard-chi.vercel.app](https://team-task-manager-liard-chi.vercel.app)
+- **Live Application (Frontend):** [https://team-task-manager-m8supse0z-hemraj-s-projects1.vercel.app](https://team-task-manager-m8supse0z-hemraj-s-projects1.vercel.app)
 - **Live API (Backend):** [https://team-task-manager-production-66d1.up.railway.app/api/health](https://team-task-manager-production-66d1.up.railway.app/api/health)
 - **GitHub Repository:** [https://github.com/hemraj08-08/team-task-manager](https://github.com/hemraj08-08/team-task-manager)
 

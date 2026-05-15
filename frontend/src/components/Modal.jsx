@@ -16,7 +16,7 @@ const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
       {/* Modal */}
-      <div className={`relative w-full ${sizeMap[size]} bg-slate-800 border border-slate-700 rounded-2xl shadow-2xl animate-slide-up`}>
+      <div className={`relative w-full ${sizeMap[size]} max-h-[90vh] flex flex-col bg-slate-800 border border-slate-700 rounded-2xl shadow-2xl animate-slide-up`}>
         <div className="flex items-center justify-between p-6 border-b border-slate-700">
           <h2 className="text-lg font-semibold text-white">{title}</h2>
           <button
@@ -26,7 +26,7 @@ const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
             ✕
           </button>
         </div>
-        <div className="p-6">{children}</div>
+        <div className="p-6 overflow-y-auto">{children}</div>
       </div>
     </div>
   )
