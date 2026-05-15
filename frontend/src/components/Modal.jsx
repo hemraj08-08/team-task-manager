@@ -26,7 +26,7 @@ const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
             ✕
           </button>
         </div>
-        <div className="p-6 overflow-y-auto">{children}</div>
+        <div className="flex-1 p-6 overflow-y-auto min-h-0">{children}</div>
       </div>
     </div>
   )
