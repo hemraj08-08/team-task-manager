@@ -3,7 +3,7 @@ TEAM TASK MANAGER - ASSIGNMENT SUBMISSION
 ======================================================================
 
 1. LIVE APPLICATION LINK (Vercel)
-https://team-task-manager-m8supse0z-hemraj-s-projects1.vercel.app
+https://team-task-manager-liard-chi.vercel.app
 
 2. GITHUB REPOSITORY LINK
 https://github.com/hemraj08-08/team-task-manager
