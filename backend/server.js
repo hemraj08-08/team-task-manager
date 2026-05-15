@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
@@ -20,7 +21,10 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: function(origin, callback) {
+      // Automatically allow any Vercel link to connect!
+      callback(null, origin || true);
+    },
     credentials: true,
   })
 );
@@ -40,10 +44,19 @@ app.use('/api/tasks', taskRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/users', userRoutes);
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({ success: false, message: `Route ${req.originalUrl} not found` });
-});
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'public')));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+  });
+} else {
+  // 404 handler for API routes in development
+  app.use((req, res) => {
+    res.status(404).json({ success: false, message: `Route ${req.originalUrl} not found` });
+  });
+}
 
 // Global error handler (must be last)
 app.use(errorHandler);
